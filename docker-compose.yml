@@ -1,1 +1,23 @@
-# Stage 7 will add the local infrastructure services.
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: karibu_pombe_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: karibu_pombe
+      POSTGRES_USER: karibu_pombe
+      POSTGRES_PASSWORD: karibu_pombe
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: karibu_pombe_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:
