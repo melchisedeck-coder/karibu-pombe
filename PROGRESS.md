@@ -28,3 +28,10 @@
 ## Notes
 - Original untouched "project" Flutter folder was deleted — no loss, was never modified
 - Copilot's monorepo restructuring prompt only completed Stage 1 (empty folders) — rest done manually with coaching
+- [x] NestJS connected to Postgres via TypeORM, config in .env
+- [x] stores entity created; table verified in psql (geography point + spatial index)
+- [ ] stores endpoints written, awaiting test
+- [x] stores module: POST /stores and GET /stores/nearby tested (PostGIS radius search)
+- [x] Input validation with class-validator (global ValidationPipe)
+- [ ] products module (entity linked to stores via a TypeORM relation)
+- [ ] auth with JWT
